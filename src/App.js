@@ -26,7 +26,7 @@ export default function App() {
         onClick={() => {
           dispatchaction({
             type: "changeAdd",
-            payload: "Bheemavaram"
+            payload: "Warangal"
           });
         }}
       >
