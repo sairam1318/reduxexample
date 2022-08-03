@@ -6,10 +6,26 @@ const simpleState = {
   addr: "Vizag"
 };
 
+const randomAddre = [
+  "warangal",
+  "Mumbai",
+  "Wayanad",
+  "Hyderbad",
+  "Vishakapatnam",
+  "Adilabad",
+  "Coorg",
+  "Munnar",
+  "Karimnagar",
+  "Rajamundry"
+];
+
 export const reducerFn = (state, action) => {
   switch (action.type) {
     case "changeAdd":
-      return { ...state, addr: action.payload };
+      return {
+        ...state,
+        addr: randomAddre[Math.floor(Math.random() * randomAddre.length)]
+      };
     default:
       return state;
   }
@@ -25,8 +41,7 @@ export default function App() {
       <button
         onClick={() => {
           dispatchaction({
-            type: "changeAdd",
-            payload: "Warangal"
+            type: "changeAdd"
           });
         }}
       >
